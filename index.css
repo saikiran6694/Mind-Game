@@ -1,0 +1,61 @@
+:root {
+  --card-width: 150px;
+  --card-height: 150px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.parent {
+  display: flex;
+}
+
+.parent .card-container {
+  transform-style: preserve-3d;
+  transition-property: transform;
+  transition-duration: 1s;
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 5px solid white;
+  cursor: pointer;
+}
+
+.front,
+.back {
+  width: var(--card-width);
+  height: var(--card-height);
+}
+
+.back,
+.front {
+  backface-visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.parent .card-container .child.front {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
